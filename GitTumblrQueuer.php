@@ -35,10 +35,13 @@ $tags = array('throne of glass','acomaf','aftg','studyblr','black panther',
 print_r($tags);
 echo "<br>";
 
-/* DESCRIPTION: searches through tags and adds them to an array to be queued
-   PARAM: number of posts the user wants to add to the queue
-   RETURN: returns the array with the posts
-*/
+
+/**
+ * Searches through tags and adds them to an array to be queued
+ *
+ * @param numOfPosts: number of posts the user wants to add to the queue
+ * @return   toQueue: the array with the posts to be queued
+ */
 function SearchTag($numOfPosts) {
   global $client, $tags;
 
@@ -49,10 +52,8 @@ function SearchTag($numOfPosts) {
   $size = count($tags);
   echo $size . " tags are being tracked. <br>";
 
-  $count = 0;
-
-  //Distributes, as best as possible, the number of posts coming from each tag
-  //Rounds down to get an int value instead of float/double
+  //Distributes, as best as possible, the number of posts coming from each
+  //tag. Rounds down to get an int value instead of float/double
   $numPerPost = intval($numOfPosts/$size);
 
   echo "Number of posts per tag: " . $numPerPost . "<br><br>";
@@ -81,8 +82,7 @@ function tagAndReblog($arrayPosts, $numOfPosts) {
   'aftg,tfc,tkm,trk,nora sakavic','studyblr','black panther,wakanda forever,tchalla,marvel',
   'books,booklr','simon spier,bram greenfeld,svthsa,love simon');
 
-  $blogNameArray = array(); //Stores blog names
-  $TaggedReblogs = array(); //Stores new tagged posts to be reblogged
+  //$TaggedReblogs = array(); //Stores new tagged posts to be reblogged
   $postIdArray = array(); //Stores the ID of the post ot be reblogged
   $reblogKeyArray = array(); //Stores the reblog key for the post to be reblogged
 
@@ -92,25 +92,22 @@ function tagAndReblog($arrayPosts, $numOfPosts) {
   //Forces it to be an int
   $numPerPost = intval($numOfPosts/$size);
 
-  //Gets the URL of the my tumblr
+  //Gets the URL of the your tumblr
   $blogURL = $blogname . ".tumblr.com";
 
   $count = 0; //Number of times the tag has been used
   $index = 0; //Array of tags being used at the moment
-  $total = 0;
+  $total = 0; //Overall count for tags
 
   for($j=0; $j<$size; $j++) {
     $temp = $arrayPosts[$j];
 
     //Separates the ID and the reblog key into individual arrays
     for($i=0; $i<$numPerPost; $i++) {
-      $blogNameArray[$total] = $temp[$i]->blog_name;
-
       $postIdArray[$total] = $temp[$i]->id;
-
       $reblogKeyArray[$total] = $temp[$i]->reblog_key;
 
-      $total++; //overall count for tags
+      $total++;
     }
   }
 
