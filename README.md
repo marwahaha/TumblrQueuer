@@ -12,10 +12,10 @@ Therefore, it will result in a result of *0* and nothing will be posted.
 
 The tags tracked are specified in line **30** and the tags to be added to the
 reblogged posts are specified in lines **110-112**.
+
 **WARNING:** If the tags tracked ```($tags)``` order does not match the order of the
 tags to be added to the reblogged posts ```($tagsArray)```, it will tag the posts
 improperly. The tags will not match the posts!
-
 
 ## Requirements:
 * You must have an application registered through Tumblr. You can register one by
@@ -26,3 +26,12 @@ going to (https://www.tumblr.com/oauth/apps).
 it go to: (https://getcomposer.org).
   * Update line 12 with the location of your *autoload* file. You only need the
   relative path
+
+## Notes:
+* The ```info()``` function is simply there so that you can tell it ran successfully.
+You may remove it if you wish. If so, delete lines *34-50, 161*.
+* This program uses the Tumblr PHP client (https://github.com/tumblr/tumblr.php)
+for the Tumblr API (https://tumblr.com/docs/en/api/v2)
+
+### Inspiration:
+* https://github.com/Lapomeray/Simple-Tweet
