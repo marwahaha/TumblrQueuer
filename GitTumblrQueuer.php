@@ -158,7 +158,7 @@ function tagAndReblog($arrayPosts, $numOfPosts) {
 
 //Best results if greater than or equal to the number of tags
 $numOfPosts = 56;
-info($numOfPosts);
+info($numOfPosts); //Can be removed!
 $TagsReturned = SearchTag($numOfPosts);
 tagAndReblog($TagsReturned, $numOfPosts);
 
