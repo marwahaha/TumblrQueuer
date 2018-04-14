@@ -22,18 +22,50 @@ $tokenSecret = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXX";
 //Assigns key and secret to the client
 $client = new Tumblr\API\Client($consumerKey, $consumerSecret, $token, $tokenSecret);
 
-//Name of the user's blog
+//Name of your blog
 $blogname = $client->getUserInfo()->user->name;
-
-echo "Tumblr user: $blogname<br><br>";
 
 //Tags that are tracked. KEEP ORDER CONSISTNT TO THE ORDER IN tagAndReblog() !
 //If order is not the same, posts will get tag incorrectly
 $tags = array('throne of glass','acomaf','aftg','studyblr','black panther',
  'booklr','svthsa');
 
-print_r($tags);
-echo "<br>";
+
+/**
+* Prints out information regarding number of posts you want to reblog, tags
+* being trackes and number of posts per tag that will be queued. This is so
+* that you are aware that it happened and see the confirmation on the screen.
+* This function can be removed, if that's desire, delete this and the calling
+* in line 161
+
+* @param numOfPosts: amount of posts you want to add to queue
+* @return void
+*/
+function info($numOfPosts) {
+ global $tags, $blogname;
+
+ echo "Tumblr user: $blogname<br><br>";
+
+ //number of tags being tracked
+ $size = count($tags);
+ echo $size . " tags are being tracked. Here they are: <br>";
+
+ for($i=0; $i<$size; $i++) {
+   if($i<$size-1)
+     echo "$tags[$i], ";
+   else {
+     echo ", and $tags[$i]";
+   }
+ }
+
+ echo "<br><br>You wanted $numOfPosts posts to be added to the queue <br>";
+
+ //Distributes, as best as possible, the number of posts coming from each
+ //tag. Rounds down to get an int value instead of float/double
+ $numPerPost = intval($numOfPosts/$size);
+
+ echo "Number of posts per tag: " . $numPerPost . "<br><br>";
+}
 
 
 /**
@@ -50,13 +82,10 @@ function SearchTag($numOfPosts) {
 
   //number of tags being tracked
   $size = count($tags);
-  echo $size . " tags are being tracked. <br>";
 
   //Distributes, as best as possible, the number of posts coming from each
   //tag. Rounds down to get an int value instead of float/double
   $numPerPost = intval($numOfPosts/$size);
-
-  echo "Number of posts per tag: " . $numPerPost . "<br><br>";
 
   //Loop that searches through the tag and assigns the post to $toQueue
   for($i=0; $i<$size; $i++) {
@@ -127,7 +156,9 @@ function tagAndReblog($arrayPosts, $numOfPosts) {
   }
 }
 
+//Best results if greater than or equal to the number of tags
 $numOfPosts = 56;
+info($numOfPosts);
 $TagsReturned = SearchTag($numOfPosts);
 tagAndReblog($TagsReturned, $numOfPosts);
 
