@@ -12,6 +12,6 @@ Therefore, it will result in a result of *0* and nothing will be posted.
 
 The tags tracked are specified in line **30** and the tags to be added to the
 reblogged posts are specified in lines **110-112**.
-**WARNING** If the tags tracked ($tags) order does not match the order of the
-tags to be added to the reblogged posts ($tagsArray), it will tag the posts
+**WARNING:** If the tags tracked '''($tags)''' order does not match the order of the
+tags to be added to the reblogged posts '''($tagsArray)''', it will tag the posts
 improperly. The tags will not match the posts!
