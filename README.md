@@ -10,8 +10,9 @@ being tracked, it will not post anything because the program distributes the
 number of wnated posts by the tags tracked to attempt to evenly add posts.
 Therefore, it will result in a result of *0* and nothing will be posted.
 
-The tags tracked are specified in line **30** and the tags to be added to the
-reblogged posts are specified in lines **110-112**.
+The tags tracked are specified in line **30** in the ```($tags)``` variable and
+the tags to be added to the reblogged posts are specified in lines **110-112**
+in the ```($tagsArray)``` variable.
 
 **WARNING:** If the tags tracked ```($tags)``` order does not match the order of the
 tags to be added to the reblogged posts ```($tagsArray)```, it will tag the posts
@@ -21,7 +22,7 @@ improperly. The tags will not match the posts!
 * You must have an application registered through Tumblr. You can register one by
 going to (https://www.tumblr.com/oauth/apps).
   * Update the ```$consumerKey```,```$consumerSecret```, ```$token```, and
-  ```$tokenSecret``` variables wiht your keys
+  ```$tokenSecret``` variables with your keys
 * You must have the ```vendor/autoload``` file obtained through composer. To get
 it go to: (https://getcomposer.org).
   * Update line 12 with the location of your *autoload* file. You only need the
@@ -29,7 +30,7 @@ it go to: (https://getcomposer.org).
 
 ## Notes:
 * The ```info()``` function is simply there so that you can tell it ran successfully.
-You may remove it if you wish. If so, delete lines *34-50, 161*.
+You may remove it if you wish. If so, delete lines *34-50* and *161*.
 * This program uses the Tumblr PHP client (https://github.com/tumblr/tumblr.php)
 for the Tumblr API (https://tumblr.com/docs/en/api/v2)
 
