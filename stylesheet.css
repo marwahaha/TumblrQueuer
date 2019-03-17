@@ -1,12 +1,12 @@
 
 <style type="text/css">
 
-@font-face { font-family: Code; font-weight: bold; src: url('CODE Bold.otf');}
-@font-face { font-family: Geo; font-weight: bold; src: url('GeosansLight.ttf');}
+@font-face { font-family: Code; font-weight: bold; src: url('fonts/CODE Bold.otf');}
+@font-face { font-family: Geo; font-weight: bold; src: url('fonts/GeosansLight.ttf');}
 
 body {
   width: 80%;
-  background-image: url("gradient.jpg");
+  background-image: url("images/gradient.jpg");
   background-size: cover;
   padding: 25px;
   margin: auto;
