@@ -34,6 +34,8 @@ it go to: (https://getcomposer.org).
 You may remove it if you wish. If so, delete lines *34-50* and *161*.
 * This program uses the Tumblr PHP client (https://github.com/tumblr/tumblr.php)
 for the Tumblr API (https://tumblr.com/docs/en/api/v2)
+* The Tumblr PHP client only allows for a maximum of 20 posts to be retrieved
+regarding a certain tag. Keep your ```$numOfPosts``` and ```$tags``` in balance.
 
 ### Inspiration:
 * https://github.com/Lapomeray/Simple-Tweet
