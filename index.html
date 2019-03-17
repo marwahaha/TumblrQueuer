@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<link rel="stylesheet" type="text/css" href="stylesheet.css">
+
+<head>
+  <title>Queuer Home</title>
+</head>
+<br>
+
+<body>
+
+  <div class="content">
+    <form action="PostsQueued.php" method="POST" autocomplete="off">
+      <!-- autocomplete is to make sure form clear after refresh [firefox-only issue] -->
+
+      <h2>Tumblr Queuer</h2>
+
+      <div class="form-input" required>
+        <span class="label-input">How many posts do you want queued? *</span>
+
+        <!-- TODO: disable the scroll of the type="number" -->
+        <input class="user-input" type="number" min=10 name="numOfPosts" placeholder="Write a number here . . ." required>
+      </div>
+
+
+      <div class="form-input-tags">
+        <span class="label-input">Select tags you want to search through :<br></span>
+
+        <!-- T  A  G  S /// T  A  G  S /// T  A  G  S -->
+        <div class="checkboxes">
+          <div class="indiv-tag">
+            <input type="checkbox" name="tag-1" id="tag-1"><label for="tag-1">Throne of Glass</label>
+          </div>
+
+          <div class="indiv-tag">
+            <input type="checkbox" name="tag-2" id="tag-2"><label for="tag-2">A Court of Thornes and Roses</label>
+          </div>
+
+          <div class="indiv-tag">
+            <input type="checkbox" name="tag-3" id="tag-3"><label for="tag-3">All for the Game</label>
+          </div>
+
+          <div class="indiv-tag">
+            <input type="checkbox" name="tag-4" id="tag-4"><label for="tag-4">Studyblr</label>
+          </div>
+
+          <div class="indiv-tag">
+            <input type="checkbox" name="tag-5" id="tag-5"><label for="tag-5">This Savage Song</label>
+          </div>
+
+          <div class="indiv-tag">
+            <input type="checkbox" name="tag-6" id="tag-6"><label for="tag-6">Booklr</label>
+          </div>
+
+          <div class="indiv-tag">
+            <input type="checkbox" name="tag-7" id="tag-7"><label for="tag-7">The Raven Boys</label>
+          </div>
+
+          <div class="indiv-tag">
+            <input type="checkbox" name="tag-8" id="tag-8"><label for="tag-8">Aedion</label>
+          </div>
+
+          <div class="indiv-tag">
+            <input type="checkbox" name="tag-9" id="tag-9"><label for="tag-9">Assassin's Creed 2</label>
+          </div>
+
+          <div class="indiv-tag">
+            <input type="checkbox" name="tag-10" id="tag-10"><label for="tag-10">Dragon Age</label>
+          </div>
+
+          <div class="indiv-tag">
+            <input type="checkbox" name="tag-11" id="tag-11"><label for="tag-11">Game of Thrones</label>
+          </div>
+
+          <div class="indiv-tag">
+            <input type="checkbox" name="tag-12" id="tag-12"><label for="tag-12">Hamilton</label>
+          </div>
+
+          <div class="indiv-tag">
+            <input type="checkbox" name="tag-13" id="tag-13"><label for="tag-13">Six of Crows</label>
+          </div>
+
+          <div class="indiv-tag">
+            <input type="checkbox" name="tag-14" id="tag-14"><label for="tag-14">Illuminae</label>
+          </div>
+
+          <div class="indiv-tag">
+            <input type="checkbox" name="tag-15" id="tag-15"><label for="tag-15">Queen</label>
+          </div>
+
+          <div class="indiv-tag">
+            <input type="checkbox" name="tag-16" id="tag-16"><label for="tag-16">Kingdom of Ash</label>
+          </div>
+
+          <div class="indiv-tag">
+            <input type="checkbox" name="tag-17" id="tag-17"><label for="tag-17">Fenrys Moonbeam</label>
+          </div>
+        </div>
+      </div>
+
+      <!-- TODO: Allow for checkbox to check all -->
+
+      <br>
+
+      <button name="submit" id="submit" type="submit" class="button">Queue Posts</button>
+
+    </form>
+
+    <!-- TODO: add a waiting/loading icon. It either goest here, or in the
+    PostsQueued.php file. Probably the latter? -->
+
+  </div>
+
+</body>
+</html>
