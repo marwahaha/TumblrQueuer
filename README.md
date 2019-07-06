@@ -7,7 +7,7 @@ to review the posts rather than select them one by one.
 The number of posts that are added to the queue is specified in line **160** in
 the ```$numOfPosts``` variable. Keep in mind that if the number of posts wanted
 is less than the number of tags being tracked, it will not post anything because
-the program distributes the number of wnated posts by the tags tracked to
+the program distributes the number of wanted posts by the tags tracked to
 attempt to evenly add posts. Therefore, it will result in a result of *0* and
 nothing will be posted.
 
